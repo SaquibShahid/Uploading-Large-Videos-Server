@@ -69,7 +69,6 @@ router.post('/upload', upload.single('video'), async (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: 'No video file uploaded.' });
     }
-
     try {
         const chunkNumber = Number(req.body.chunk);
         const totalChunks = Number(req.body.totalChunks);
@@ -148,6 +147,7 @@ async function mergeChunks(fileName, totalChunks) {
 }
 
 router.use((err, req, res, next) => {
+    console.log(err);
     if (err instanceof multer.MulterError) {
         console.log('Multer error:', err.message);
         return res.status(400).json({ error: err.message });

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Large Video Upload</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form id="upload-form">
+      <input type="file" name="video" accept="video/*" required />
+      <button type="submit">Upload Video</button>
+      <div id="progress-container">
+        <div id="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <div id="status"></div>
+      </div>
+    </form>
+    <script src="logic.js"></script>
+  </body>
+</html>
